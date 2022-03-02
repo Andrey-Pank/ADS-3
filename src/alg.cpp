@@ -6,7 +6,7 @@ int cbinsearch(int *arr, int size, int value) {
     int cnt = 0;
     if (value == arr[mid]) {
         if (arr[mid] == arr[mid-1]) {
-            for (int i = mid; i > 0; i--) {
+            for (int i = mid; i >= 0; i--) {
                 if (arr[i] == value) {
                     cnt += 1;
                 } else {
@@ -19,7 +19,7 @@ int cbinsearch(int *arr, int size, int value) {
             if (0 != cnt) {
                 i += 1;
             }
-            for (; i < j; i++) {
+            for (; i < size; i++) {
                 if (arr[i] == value) {
                     cnt += 1;
                 } else {
@@ -28,7 +28,7 @@ int cbinsearch(int *arr, int size, int value) {
             }
         }
     } else if (value < arr[mid]) {
-        for (int i = mid; i > 0; i--) {
+        for (int i = mid; i >= 0; i--) {
             if (arr[i] == value) {
                 cnt += 1;
             }
@@ -37,7 +37,7 @@ int cbinsearch(int *arr, int size, int value) {
             }
         }
     } else if (value > arr[mid]) {
-        for (int i = mid; i < j; i++) {
+        for (int i = mid; i < size; i++) {
             if (arr[i] == value) {
                 cnt += 1;
             }
